@@ -1,0 +1,724 @@
+<body ng-app="myapp">
+    <div ng-include="'/pages/header.html'"></div>
+    <br />
+  <div class="container-fluid">
+    <!-- Admin -->
+    <div class="row mt-5 ">
+        <div class="d-flex align-items-start">
+            <div class="nav flex-column nav-pills mx-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+                  </svg>       
+                Admin Dashboard
+            </button>
+
+              <button class="nav-link" id="v-pills-users-tab" data-bs-toggle="pill" data-bs-target="#v-pills-users" type="button" role="tab" aria-controls="v-pills-users" aria-selected="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                    <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                  </svg> 
+                Quản lý tài khoản
+            </button>
+
+              <button class="nav-link" id="v-pills-sources-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sources" type="button" role="tab" aria-controls="v-pills-sources" aria-selected="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M7.646 10.854a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 9.293V5.5a.5.5 0 0 0-1 0v3.793L6.354 8.146a.5.5 0 1 0-.708.708l2 2z"/>
+                    <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/>
+                  </svg> 
+                Quản lý các khóa
+            </button>
+
+              <button class="nav-link" id="v-pills-questions-tab" data-bs-toggle="pill" data-bs-target="#v-pills-questions" type="button" role="tab" aria-controls="v-pills-questions" aria-selected="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-square-fill" viewBox="0 0 16 16">
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.496 6.033a.237.237 0 0 1-.24-.247C5.35 4.091 6.737 3.5 8.005 3.5c1.396 0 2.672.73 2.672 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.105a.25.25 0 0 1-.25.25h-.81a.25.25 0 0 1-.25-.246l-.004-.217c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.803 0-1.253.478-1.342 1.134-.018.137-.128.25-.266.25h-.825zm2.325 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z"/>
+                  </svg>  
+                Quản lý câu hỏi
+            </button>
+
+            <button class="nav-link" id="v-pills-logout-tab" data-bs-toggle="pill" data-bs-target="#v-pills-logout" type="button" role="tab" aria-controls="v-pills-logout" aria-selected="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                  </svg> 
+                  <a href="#login" class="text-decoration-none">
+                    Đăng xuất
+                  </a>
+            </button>
+            </div>
+
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active bg-light" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                  <img src="../img/dashboard.svg" alt="" style="width: 100%;">
+              </div>
+            
+              <div class="tab-pane fade bg-light" id="v-pills-users" role="tabpanel" aria-labelledby="v-pills-users-tab">
+                <div class="row mb-5">
+                  <form class="col-8 offset-1" name="formAccounts">
+                    <div class="form-group mt-3">
+                        <label for="">Fullname</label>
+                        <input  class="form-control"
+                                type="text"
+                                ng-model="user.fullname"
+                                name="fullname"
+                                required
+                                >
+                                <div class="text-danger" ng-hide="formAccounts.fullname.$untouched || formAccounts.fullname.$valid">
+                                    <small ng-show="formAccounts.fullname.$error.required"> Không được để trống </small>
+                                </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Username</label>
+                        <input  class="form-control"
+                                type="text"
+                                ng-model="user.username"
+                                name="username"
+                                required
+                                >
+                                <div class="text-danger" ng-hide="formAccounts.username.$untouched || formAccounts.username.$valid">
+                                    <small ng-show="formAccounts.username.$error.required"> Không được để trống </small>
+                                </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Email</label>
+                        <input class="form-control"
+                               type="email"
+                               ng-model="user.email"
+                               name="email"
+                               required
+                               >
+                               <div class="text-danger" ng-hide="formAccounts.email.$untouched || formAccounts.email.$valid">
+                                <small ng-show="formAccounts.email.$error.required"> Không được để trống </small>
+                                <small ng-show="formAccounts.email.$error.email">Không đúng định dạng email</small>
+                            </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Password</label>
+                        <input class="form-control"
+                               type="password"
+                               ng-model="user.password"
+                               name="password"
+                               required
+                            >
+                            <div class="text-danger" ng-hide="formAccounts.password.$untouched || formAccounts.password.$valid">
+                                <small ng-show="formAccounts.password.$error.required"> Không được để trống </small>
+                            </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label  for="">Gender</label>
+                        <input  class="form-control"
+                                type="text"
+                                ng-model="user.gender"
+                                name="gender"
+                                required
+                                >
+                            <div class="text-danger" ng-hide="formAccounts.gender.$untouched || formAccounts.gender.$valid">
+                                <small ng-show="formAccounts.gender.$error.required"> Không được để trống </small>
+                            </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Marks</label>
+                        <input class="form-control"
+                                type="number"
+                                ng-model="user.marks"
+                                name="marks"
+                                required
+                                >
+                            <div class="text-danger" ng-hide="formAccounts.marks.$untouched || formAccounts.marks.$valid">
+                                <small ng-show="formAccounts.marks.$error.required"> Không được để trống </small>
+                            </div>    
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Birdthday</label>
+                        <input class="form-control"
+                               type="text"
+                               ng-model="user.birthday"
+                               name="birdthday"
+                               required
+                               >       
+                            <div class="text-danger" ng-hide="formAccounts.birdthday.$untouched || formAccounts.birdthday.$valid">
+                                <small ng-show="formAccounts.birdthday.$error.required"> Không được để trống </small>
+                            </div>    
+                    </div>
+                    <div class="form-group mt-3">
+                        <button class="btn btn-primary" ng-click="onFormSubmitAccount($event)">Lưu</button>
+                        <button class="btn btn-primary ml-3" ng-click="onClearAccount()">Làm mới</button>
+                    </div>
+                </form>
+                </div>
+
+                <div class="row mx-2 table-scrollable">
+                    <table class="table  table-hover table-bordered border-secondary"> 
+                        <thead>
+                            <tr class="table-dark">
+                                <td>ID</td>
+                                <td>Fullname</td>
+                                <td>Username</td>
+                                <td>Email</td>
+                                <td>Password</td>
+                                <td>Gender</td>
+                                <td>Marks</td>
+                                <td>Birdthday</td>
+                                <td colspan="2">Thao tác</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="us in users">
+                                <td>{{us.id}}</td>
+                                <td>{{us.fullname}}</td>
+                                <td>{{us.username}}</td>
+                                <td>{{us.email}}</td>
+                                <td class="hidetext">{{us.password}}</td>
+                                <td>{{us.gender}}</td>
+                                <td>{{us.marks}}</td>
+                                <td>{{us.birthday}}</td>
+                                <td>
+                                    <button class="btn btn-primary" ng-click="onUpdateAccount($index)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                                          </svg>
+                                        Sửa
+                                    </button>
+                                </td>
+                                <td>
+                                    <button
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#modal_delete_{{ us.id }}"
+                                        class="btn btn-danger">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-x" viewBox="0 0 16 16">
+                                            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                            <path fill-rule="evenodd" d="M12.146 5.146a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
+                                          </svg>    
+                                        Xóa
+                                    </button>
+                                    <div class="modal fade" id="modal_delete_{{ us.id }}"
+                                        tabindex="-1" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Cảnh báo</h5>
+                                                    <button type="button"
+                                                    class="btn-close"
+                                                    data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                <h4>Bạn có chắc muốn xóa tài khoản này ?</h4>
+                                                <small class="text-danger">Tài khoản sẽ bị xóa vĩnh viễn và không thể khôi phục lại .</small>
+                                                </div>
+                                                    <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Đóng</button>
+                                                    <button type="button"
+                                                        data-bs-dismiss="modal"
+                                                        ng-click="onDeleteAccount($index)"
+                                                        class="btn btn-danger">Xóa</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+              </div>
+
+              <div class="tab-pane fade bg-light" id="v-pills-sources" role="tabpanel" aria-labelledby="v-pills-sources-tab">
+                <div class="row mb-5">
+                  <form class="col-8 offset-1" name="formCourses">
+                    <div class="form-group mt-3">
+                        <label for="">ID</label>
+                        <input class="form-control"
+                            type="text"
+                            ng-model="course.Id"
+                            name="id"
+                            required
+                            >
+                            <div class="text-danger" ng-hide="formCourses.id.$untouched || formCourses.id.$valid">
+                                <small ng-show="formCourses.id.$error.required"> Không được để trống </small>
+                            </div> 
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Name</label>
+                        <input class="form-control"
+                            type="text"
+                            ng-model="course.Name"
+                            name="name"
+                            required
+                            >
+                            <div class="text-danger" ng-hide="formCourses.name.$untouched || formCourses.name.$valid">
+                                <small ng-show="formCourses.name.$error.required"> Không được để trống </small>
+                            </div> 
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Logo</label>
+                        <input class="form-control"
+                            type="text"
+                            ng-model="course.Logo"
+                            name="logo"
+                            required
+                            >
+                            <div class="text-danger" ng-hide="formCourses.logo.$untouched || formCourses.logo.$valid">
+                                <small ng-show="formCourses.logo.$error.required"> Không được để trống </small>
+                            </div> 
+                    </div>
+                    <div class="form-group mt-3">
+                        <button class="btn btn-primary" ng-click="onFormSubmitCourse($event)">Lưu</button>
+                        <button class="btn btn-primary ml-3" ng-click="onClearCourse()">Làm mới</button>
+                    </div>
+                </form>
+                </div>
+
+                <div class="row mx-2 table-scrollable">
+                  <table class="table  table-hover table-bordered border-secondary"> 
+                      <thead>
+                          <tr class="table-dark">
+                              <td>STT</td>
+                              <td>ID</td>
+                              <td>Name</td>
+                              <td>Logo</td>
+                              <td colspan="2">Thao tác</td>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr ng-repeat="cs in courses">
+                              <td>{{cs.id}}</td>
+                              <td>{{cs.Id}}</td>
+                              <td>{{cs.Name}}</td>
+                              <td>{{cs.Logo}}</td>
+                              <td>
+                                  <button class="btn btn-primary" ng-click="onUpdateCourse($index)">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                          <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                                        </svg>
+                                      Sửa
+                                  </button>
+                              </td>
+                              <td>
+                                  <button
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#modal_delete_{{ cs.Id }}"
+                                      class="btn btn-danger">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-x" viewBox="0 0 16 16">
+                                          <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                          <path fill-rule="evenodd" d="M12.146 5.146a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
+                                        </svg>    
+                                      Xóa
+                                  </button>
+                                  <div class="modal fade" id="modal_delete_{{ cs.Id }}"
+                                      tabindex="-1" aria-hidden="true">
+                                      <div class="modal-dialog modal-lg">
+                                          <div class="modal-content">
+                                              <div class="modal-header">
+                                                  <h5 class="modal-title">Cảnh báo</h5>
+                                                  <button type="button"
+                                                  class="btn-close"
+                                                  data-bs-dismiss="modal"
+                                                  aria-label="Close"></button>
+                                              </div>
+                                              <div class="modal-body">
+                                              <h4>Bạn có chắc muốn xóa khóa học này ?</h4>
+                                              <small class="text-danger">Khóa học sẽ bị xóa vĩnh viễn và không thể khôi phục lại .</small>
+                                              </div>
+                                                  <div class="modal-footer">
+                                                  <button type="button" class="btn btn-secondary"
+                                                      data-bs-dismiss="modal">Đóng</button>
+                                                  <button type="button"
+                                                      data-bs-dismiss="modal"
+                                                      ng-click="onDeleteCourse($index)"
+                                                      class="btn btn-danger">Xóa</button>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+
+              </div>
+
+            <div class="tab-pane fade bg-light" id="v-pills-questions" role="tabpanel" aria-labelledby="v-pills-questions-tab">
+                <div class="row mb-5">
+                    <form class="col-8 offset-1" name="formCourses">
+                      <div class="form-group mt-3">
+                          <label for="">ID</label>
+                          <input class="form-control"
+                              type="text"
+                              ng-model="quiz.id"
+                              name="id"
+                              required
+                              >
+                              <div class="text-danger" ng-hide="formCourses.id.$untouched || formCourses.id.$valid">
+                                  <small ng-show="formCourses.id.$error.required"> Không được để trống </small>
+                              </div> 
+                      </div>
+                      <div class="form-group mt-3">
+                          <label for="">Text</label>
+                          <input class="form-control"
+                              type="text"
+                              ng-model="quiz.Text"
+                              name="text"
+                              required
+                              >
+                              <div class="text-danger" ng-hide="formCourses.text.$untouched || formCourses.text.$valid">
+                                  <small ng-show="formCourses.text.$error.required"> Không được để trống </small>
+                              </div> 
+                      </div>
+                      <div class="form-group mt-3">
+                          <label for="">Marks</label>
+                          <input class="form-control"
+                              type="number"
+                              ng-model="quiz.Marks"
+                              name="mark"
+                              required
+                              >
+                              <div class="text-danger" ng-hide="formCourses.mark.$untouched || formCourses.mark.$valid">
+                                  <small ng-show="formCourses.mark.$error.required"> Không được để trống </small>
+                              </div> 
+                      </div>
+                      <div class="form-group mt-3">
+                        <label for="">AnswerId</label>
+                        <input class="form-control"
+                            type="text"
+                            ng-model="quiz.AnswerId"
+                            name="answerId"
+                            required
+                            >
+                            <div class="text-danger" ng-hide="formCourses.answerId.$untouched || formCourses.answerId.$valid">
+                                <small ng-show="formCourses.answerId.$error.required"> Không được để trống </small>
+                            </div> 
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Answer A</label>
+                        <input class="form-control"
+                            type="text"
+                            ng-model="quiz.Answers[0].Text"
+                            name="answerTextA"
+                            required
+                            >
+                            <div class="text-danger" ng-hide="formCourses.answerTextA.$untouched || formCourses.answerTextA.$valid">
+                                <small ng-show="formCourses.answerTextA.$error.required"> Không được để trống </small>
+                            </div> 
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">AnswerId A</label>
+                        <input class="form-control"
+                            type="text"
+                            ng-model="quiz.Answers[0].Id"
+                            name="answerIdA"
+                            required
+                            >
+                            <div class="text-danger" ng-hide="formCourses.answerIdA.$untouched || formCourses.answerIdA.$valid">
+                                <small ng-show="formCourses.answerIdA.$error.required"> Không được để trống </small>
+                            </div> 
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Answer B</label>
+                        <input class="form-control"
+                            type="text"
+                            ng-model="quiz.Answers[1].Text"
+                            name="answerTextB"
+                            required
+                            >
+                            <div class="text-danger" ng-hide="formCourses.answerTextB.$untouched || formCourses.answerTextB.$valid">
+                                <small ng-show="formCourses.answerTextB.$error.required"> Không được để trống </small>
+                            </div> 
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">AnswerId B</label>
+                        <input class="form-control"
+                            type="text"
+                            ng-model="quiz.Answers[1].Id"
+                            name="answerIdB"
+                            required
+                            >
+                            <div class="text-danger" ng-hide="formCourses.answerIdB.$untouched || formCourses.answerIdB.$valid">
+                                <small ng-show="formCourses.answerIdB.$error.required"> Không được để trống </small>
+                            </div> 
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Answer C</label>
+                        <input class="form-control"
+                            type="text"
+                            ng-model="quiz.Answers[2].Text"
+                            name="answerTextC"
+                            required
+                            >
+                            <div class="text-danger" ng-hide="formCourses.answerTextC.$untouched || formCourses.answerTextC.$valid">
+                                <small ng-show="formCourses.answerTextC.$error.required"> Không được để trống </small>
+                            </div> 
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">AnswerId C</label>
+                        <input class="form-control"
+                            type="text"
+                            ng-model="quiz.Answers[2].Id"
+                            name="answerIdC"
+                            required
+                            >
+                            <div class="text-danger" ng-hide="formCourses.answerIdC.$untouched || formCourses.answerIdC.$valid">
+                                <small ng-show="formCourses.answerIdC.$error.required"> Không được để trống </small>
+                            </div> 
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Answer D</label>
+                        <input class="form-control"
+                            type="text"
+                            ng-model="quiz.Answers[3].Text"
+                            name="answerTextD"
+                            required
+                            >
+                            <div class="text-danger" ng-hide="formCourses.answerTextD.$untouched || formCourses.answerTextD.$valid">
+                                <small ng-show="formCourses.answerTextD.$error.required"> Không được để trống </small>
+                            </div> 
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">AnswerId D</label>
+                        <input class="form-control"
+                            type="text"
+                            ng-model="quiz.Answers[3].Id"
+                            name="answerIdD"
+                            required
+                            >
+                            <div class="text-danger" ng-hide="formCourses.answerIdD.$untouched || formCourses.answerIdD.$valid">
+                                <small ng-show="formCourses.answerIdD.$error.required"> Không được để trống </small>
+                            </div> 
+                    </div>
+                    
+
+                    <div class="form-group mt-3">
+                        <button class="btn btn-primary" ng-click="onFormSubmitQuiz($event)">Lưu</button>
+                        <button class="btn btn-primary ml-3" ng-click="onClearQuiz()">Làm mới</button>
+                    </div>
+                    </form>
+                </div>
+                <div class="row mx-2 table-scrollable">
+                    <table class="table  table-hover table-bordered border-secondary"> 
+                        <thead>
+                            <tr class="table-dark">
+                                <td>ID</td>
+                                <td>Text</td>
+                                <td>Marks</td>
+                                <td>AnswerId</td>
+                                <td>Answer A</td>
+                                <td>Answer B</td>
+                                <td>Answer C</td>
+                                <td>Answer D</td>
+                                <td>AnswerID A</td>
+                                <td>AnswerID B</td>
+                                <td>AnswerID C</td>
+                                <td>AnswerID D</td>
+                                <td colspan="2">Thao tác</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="q in quizs">
+                                <td>{{q.id}}</td>
+                                <td>{{q.Text}}</td>
+                                <td>{{q.Marks}}</td>
+                                <td>{{q.AnswerId}}</td>
+                                <td ng-repeat="qz in q.Answers">{{qz.Text}}</td>
+                                <td ng-repeat="qz in q.Answers">{{qz.Id}}</td>
+                                <td>
+                                    <button class="btn btn-primary" ng-click="onUpdateQuiz($index)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                                          </svg>
+                                        Sửa
+                                    </button>
+                                </td>
+                                <td>
+                                    <button
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#modal_delete_{{ q.id }}"
+                                        class="btn btn-danger">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-x" viewBox="0 0 16 16">
+                                            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                            <path fill-rule="evenodd" d="M12.146 5.146a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
+                                          </svg>    
+                                        Xóa
+                                    </button>
+                                    <div class="modal fade" id="modal_delete_{{ q.id }}"
+                                        tabindex="-1" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Cảnh báo</h5>
+                                                    <button type="button"
+                                                    class="btn-close"
+                                                    data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                <h4>Bạn có chắc muốn xóa câu hỏi này ?</h4>
+                                                <small class="text-danger">Câu hỏi sẽ bị xóa vĩnh viễn và không thể khôi phục lại .</small>
+                                                </div>
+                                                    <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Đóng</button>
+                                                    <button type="button"
+                                                        data-bs-dismiss="modal"
+                                                        ng-click="onDeleteQuiz($index)"
+                                                        class="btn btn-danger">Xóa</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+            </div>
+          </div>
+    </div>
+  </div>
+  </div>
+    <!-- Footer -->
+    <footer class="mt-5" ng-controller="ctrlAdmin">
+        <div class="row pt-5 px-5 pb-2 text-left text-white bg-dark">
+          <div class="col-12 col-lg-4">
+            <h5>ESquizz online</h5>
+            <br />
+            <p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-telephone"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                />
+              </svg>
+              Hotline : 0123456789
+            </p>
+            <p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-geo-alt"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"
+                />
+                <path
+                  d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                />
+              </svg>
+              Địa chỉ : 123 Hà Nội - Việt Nam
+            </p>
+            <p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-clock-history"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"
+                />
+                <path
+                  d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"
+                />
+                <path
+                  d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"
+                />
+              </svg>
+              Giờ làm việc : 7h - 22h, T2 - T7
+            </p>
+            <p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-envelope"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
+                />
+              </svg>
+              Email : thanhyou00@gmail.com
+            </p>
+          </div>
+          <div class="col-12 col-lg-4">
+            <h5>Mạng xã hội</h5>
+            <br />
+            <p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-facebook"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                />
+              </svg>
+              <a href="https://www.facebook.com/groups/242272107118908" class="text-decoration-none text-white">Facebook</a>
+            </p>
+            <p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-instagram"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                />
+              </svg>
+              <a href="https://www.instagram.com/thanhyou00" class="text-decoration-none text-white">Instagram</a>
+            </p>
+            <p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-github"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                />
+              </svg>
+              <a href="https://github.com/thanhyou00" class="text-decoration-none text-white">Github</a>
+            </p>
+          </div>
+          <div class="col-12 col-lg-4">
+            <h5>Giới thiệu</h5>
+            <br />
+            <iframe
+              width="100%"
+              height="150"
+              src="https://www.youtube.com/embed/UJg1w9pbNvo"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <hr />
+          <p class="text-center">
+            © All rights reserved 2022. Thiết kế website bởi trucnvph17923
+          </p>
+        </div>
+      </footer>
+</body>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myroutes">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iStudy</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Icon App -->
+    <link rel="shortcut icon" href="./img/avt.svg" type="image/x-icon" />
+    <!-- Alert Sweet -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">      
+      <!-- View -->
+      <main ng-view></main>
+      <!-- Back to top -->
+      <div>
+        <button class="backTop" onclick="topFunction()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-up text-white" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"/>
+            <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+          </svg>
+        </button>
+      </div>
+      <!-- Change pass -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Đổi mật khẩu</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form action="" class="">
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label"
+                    >Tên đăng nhập</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label"
+                    >Mật khẩu cũ</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label"
+                    >Mật khẩu mới</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label"
+                    >Mã xác nhận</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                  />
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary">Xác nhận</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Đóng
+              </button>
+              <button type="button" class="btn btn-primary">
+                Lưu thay đổi
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angularjs.min.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="/routes/routing.js"></script>
+    <script src="main.js"></script>
+    <script src="./controllers/controllerHome.js"></script>
+    <script src="./controllers/controllerTest.js"></script>
+    <script src="./controllers/controllerAccount.js"></script>
+    <script src="./databases/ADAV.js"></script>
+    <script src="./databases/ADBS.js"></script>
+    <script src="./databases/ADTE.js"></script>
+    <script src="./databases/ADUI.js"></script>
+    <script src="./databases/ASNE.js"></script>
+    <script src="./databases/CLCO.js"></script>
+    <script src="./databases/DBAV.js"></script>
+    <script src="./databases/DBBS.js"></script>
+    <script src="./databases/GAME.js"></script>
+    <script src="./databases/HTCS.js"></script>
+    <script src="./databases/INMA.js"></script>
+    <script src="./databases/JAAV.js"></script>
+    <script src="./databases/JABS.js"></script>
+    <script src="./databases/JSPR.js"></script>
+    <script src="./databases/LAYO.js"></script>
+    <script src="./databases/MOWE.js"></script>
+    <script src="./databases/PHPP.js"></script>
+    <script src="./databases/PMAG.js"></script>
+    <script src="./databases/VBPR.js"></script>
+    <script src="./databases/WEBU.js"></script>
+  </body>
+</html>

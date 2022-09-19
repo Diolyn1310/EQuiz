@@ -1,0 +1,169 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-7 pt-5">
+      <h2 class="pt-5">iStudy</h2>
+      <form name="formUser" ng-submit="submitSignup($event)" method="get">
+        <h2>Đăng ký</h2>
+        <div class="row">
+          <!-- input -->
+          <div class="col-12 col-sm-6 ">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >
+                Tên đăng nhập
+                <span class="text-danger">*</span>
+                </label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                required
+                oninvalid="this.setCustomValidity('Vui lòng nhập tên đăng nhập')"
+                onchange="this.setCustomValidity('')"
+                name="username"
+                ng-model="user.username"
+              />
+              <div class="text-danger" ng-hide="formUser.username.$untouched || formUser.username.$valid">
+                <small ng-show="formUser.username.$error.required"> Không được để trống </small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >
+                Mật khẩu
+                <span class="text-danger">*</span>
+                </label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="exampleFormControlInput1"
+                required
+                oninvalid="this.setCustomValidity('Vui lòng nhập mật khẩu')"
+                onchange="this.setCustomValidity('')"
+                name="password"
+                ng-model="user.password"
+              />
+              <div class="text-danger" ng-hide="formUser.password.$untouched || formUser.password.$valid">
+                <small ng-show="formUser.password.$error.required"> Không được để trống </small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >
+                Mật khẩu xác nhận
+                <span class="text-danger">*</span>
+                </label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="exampleFormControlInput1"
+                required
+                oninvalid="this.setCustomValidity('Vui lòng nhập mật khẩu xác nhận')"
+                onchange="this.setCustomValidity('')"
+                name="repassword"
+                ng-model="repassword"
+              />
+              <div class="text-danger" ng-hide="formUser.repassword.$untouched || formUser.repassword.$valid">
+                <small ng-show="formUser.repassword.$error.required"> Không được để trống </small>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 ">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">
+                Email
+                <span class="text-danger">*</span>
+              </label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                required
+                oninvalid="this.setCustomValidity('Vui lòng nhập email')"
+                onchange="this.setCustomValidity('')"
+                name="email"
+                ng-model="user.email"
+              />
+              <div class="text-danger" ng-hide="formUser.email.$untouched || formUser.email.$valid">
+                <small ng-show="formUser.email.$error.required"> Không được để trống </small>
+                <small ng-show="formUser.email.$error.email">Không đúng định dạng email</small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >
+                Giới tính
+                <span class="text-danger">*</span>
+                </label
+              >
+              <select name="" class="form-select" ng-model="user.gender">
+                <option value="true">Nam</option>
+                <option value="false">Nữ</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >
+                Ngày sinh
+                <span class="text-danger">*</span>
+                </label
+              >
+              <input
+                type="date"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                required
+                oninvalid="this.setCustomValidity('Ngày sinh không đúng')"
+                onchange="this.setCustomValidity('')"
+                name="date"
+                ng-model="user.birthday"
+              />
+              <div class="text-danger" ng-hide="formUser.date.$untouched || formUser.date.$valid">
+                <small ng-show="formUser.date.$error.required"> Không được để trống </small>
+                <small ng-show="formUser.date.$error.date"
+                  >Không đúng định dạng date</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <p 
+            ng-show="message.length != 0"
+            class="col-8 offset-2 alert {{ isSuccess ? 'alert-success' : 'alert-danger' }}">
+            {{ message }}
+         </p>
+          <!-- check  -->
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckChecked"
+            checked
+          />
+          <label class="form-check-label" for="flexCheckChecked">
+            Đồng ý điều khoản
+          </label>
+          <span class="text-right"><a href="#login">Đăng nhập ngay ?</a></span>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary" >Đăng ký</button>
+      </form>
+    </div>
+    <div
+      class="col-12 col-sm-5 p-3"
+      style="display: flex; justify-content: center; align-items: center"
+    >
+      <img
+        src="../img/undraw_mobile_login_re_9ntv.svg"
+        class="img-fluid"
+        alt=""
+      />
+    </div>
+  </div>
+</div>
